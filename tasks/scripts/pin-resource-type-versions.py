@@ -21,9 +21,7 @@ def find_next_set_pipeline(lines, from_line):
     return yaml.safe_load(step_yaml), leading, i, j
 
 def remove_prefix(s, prefix):
-    if s.startswith(prefix):
-        return s[len(prefix):]
-    return s
+    return s[len(prefix):] if s.startswith(prefix) else s
 
 if __name__ == '__main__':
     release_minor = os.environ['RELEASE_MINOR']
